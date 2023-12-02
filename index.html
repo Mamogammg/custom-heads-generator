@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create a Head Value</title>
+</head>
+<body>
+  <h1>Create a Head Value</h1>
+  <p>This app allows you to make the value code for Minecraft heads</p>
+  <br>
+  <br>
+  <p>Put the url of your skin here:</p>
+  <input type="text" id="textInput">
+  <br>
+  <button id="button">Make!</button>
+  <br>
+  <p>Output:</p>
+  <textarea id="output" readonly="true" style="width: 560px; height: 32px; resize: none;"></textarea>
+
+  <script>
+    document.getElementById('button').addEventListener('click', function() {
+      function Id(id){
+        return document.getElementById(id);
+      }
+      const URL = Id("textInput").value;
+      const text = '{"textures":{"SKIN":{"url":"'+URL+'"}}}';
+      Id("output").innerText = btoa(text);
+      
+    });
+  </script>
+</body>
+</html>
